@@ -35,7 +35,15 @@ runs/
 # YOLO weights / large models
 # =========================
 yolov8_weights/
+# Large YOLO model/checkpoint files
 *.pt
+
+!yolov8_weights/
+!yolov8_weights/road_damage.pt
+
+# Keep the project's final trained model
+!yolov8_weights/
+!yolov8_weights/road_damage.pt
 *.pth
 *.onnx
 *.h5
