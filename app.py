@@ -6,7 +6,7 @@ import cv2
 app = Flask(__name__)
 
 # Load trained model
-model = YOLO("yolov8_weights/road_damage.pt")
+model = YOLO("models/road_damage_best.pt")
 
 UPLOAD_FOLDER = "static/uploads"
 RESULT_FOLDER = "static/results"
@@ -99,7 +99,7 @@ def index():
                         else:
                             severity = "Severe"
 
-                    elif cls == 2:  # Alligator crack
+                    elif cls == 2:  # Patch
                         volume = area * PATCH_DEPTH * SHAPE_FACTOR
 
                         if area < 0.10:
@@ -109,15 +109,6 @@ def index():
                         else:
                             severity = "Severe"
 
-                    elif cls == 3:  # Patch
-                        volume = area * PATCH_DEPTH * SHAPE_FACTOR
-
-                        if area < 0.10:
-                            severity = "Low"
-                        elif area < 0.40:
-                            severity = "Medium"
-                        else:
-                            severity = "Severe"
                     else:
                         continue
 
