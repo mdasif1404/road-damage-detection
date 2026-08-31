@@ -1,0 +1,68 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+.venv/
+env/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# Datasets
+# =========================
+Dataset/
+Datasets/
+new_pothole_dataset/
+test_images/
+val/
+
+# =========================
+# YOLO training outputs
+# =========================
+runs/
+
+# =========================
+# YOLO weights / large models
+# =========================
+yolov8_weights/
+*.pt
+*.pth
+*.onnx
+*.h5
+*.hdf5
+
+# =========================
+# Database / local files
+# =========================
+database.db
+
+# =========================
+# Temporary / junk
+# =========================
+junk/
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+*.env
+
+# Application-generated images
+static/uploads/*
+static/results/*
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db

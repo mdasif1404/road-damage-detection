@@ -1,0 +1,244 @@
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+    color: #1e293b;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    padding: 15px 40px;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    font-weight: 600;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: #6b7280;
+}
+
+/* ===== UPLOAD CONTAINER ===== */
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* ===== GLASS DROP ZONE ===== */
+.drop-zone {
+    width: 340px;
+    padding: 45px 20px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.4);
+
+    transition: 0.3s;
+}
+
+.drop-zone:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(124,58,237,0.2);
+}
+
+.drop-zone p {
+    font-weight: 500;
+}
+
+.drop-zone span {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* HIDDEN INPUT */
+.drop-zone input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+}
+
+/* ===== BUTTON ===== */
+.analyze-btn {
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(124,58,237,0.3);
+}
+
+.analyze-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(124,58,237,0.5);
+}
+
+/* ===== SUMMARY ===== */
+.summary {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px;
+}
+
+/* GLASS CARDS */
+/* ===== DARK SUMMARY CARDS ===== */
+.summary-card {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    width: 200px;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+/* ===== RESULT CARD ===== */
+/* ===== DARK RESULT CARDS ===== */
+.card {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ===== IMAGES ===== */
+.image-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.image-wrapper img {
+    width: 50%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ===== DETAILS ===== */
+.details {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ===== STATS ===== */
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.stat span {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.stat p {
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+/* ===== SEVERITY ===== */
+.severity.low {
+    color: #22c55e;
+}
+
+.severity.medium {
+    color: #f59e0b;
+}
+
+.severity.severe {
+    color: #ef4444;
+}
+
+/* ===== BUTTON ===== */
+.actions {
+    text-align: center;
+    margin: 30px;
+}
+
+.analyze-again-btn {
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.analyze-again-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ===== LOADER ===== */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000aa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #8b5cf6;
+    border-top: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}

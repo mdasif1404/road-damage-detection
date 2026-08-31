@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RoadEye AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- FORCE REFRESH -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=50">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>🚧 RoadEye AI</h2>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+
+    <h1>Smart Road Damage Detection</h1>
+    <p>Upload images and get AI-powered repair estimation</p>
+
+    <!-- FORM -->
+    <form method="post" enctype="multipart/form-data" id="uploadForm">
+
+        <div class="upload-container">
+
+            <!-- DROP ZONE -->
+            <div class="drop-zone" id="dropZone">
+                <p>📂 Drag & Drop Images</p>
+                <span>or click to browse</span>
+
+                <!-- 🔥 IMPORTANT FIX -->
+                <input type="file" name="images" id="fileInput" multiple required>
+            </div>
+
+            <button type="submit" class="analyze-btn">
+                🚀 Analyze Now
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+<!-- LOADER -->
+<div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <p>Analyzing images using AI...</p>
+</div>
+
+<script>
+const form = document.getElementById("uploadForm");
+const loader = document.getElementById("loader");
+const dropZone = document.getElementById("dropZone");
+const fileInput = document.getElementById("fileInput");
+
+/* CLICK FIX */
+dropZone.addEventListener("click", () => {
+    fileInput.click();
+});
+
+/* DRAG & DROP */
+dropZone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZone.style.borderColor = "#22c55e";
+});
+
+dropZone.addEventListener("dragleave", () => {
+    dropZone.style.borderColor = "#3b82f6";
+});
+
+dropZone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    fileInput.files = e.dataTransfer.files;
+});
+
+/* LOADER */
+form.addEventListener("submit", () => {
+    loader.classList.remove("hidden");
+});
+</script>
+
+</body>
+</html>

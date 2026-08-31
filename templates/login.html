@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Road Damage Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <h1>Automated Road Damage Detection System</h1>
+</div>
+
+<div class="container">
+    <h2>Welcome</h2>
+    <p>
+        This system helps identify road damages such as potholes and cracks using images captured by drones.
+        It supports faster inspection and safer road maintenance.
+    </p>
+
+    <div class="info-box">
+        <strong>Who can use this?</strong><br>
+        Road authorities, engineers, researchers, and the general public for testing road images.
+    </div>
+
+    <h2>User Login</h2>
+    <form method="post">
+        <input type="text" name="username" placeholder="Enter your username" required>
+        <input type="password" name="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <p style="margin-top:15px;">
+        New user? <a href="C:\Users\asifm\road_damage_detection\templates\register.html">Create an account</a>
+    </p>
+</div>
+
+<div class="footer">
+    © 2026 Road Safety & Infrastructure Monitoring
+</div>
+
+</body>
+</html>

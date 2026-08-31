@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <h1>User Registration</h1>
+</div>
+
+<div class="container">
+    <p>Please create an account to access the road damage detection service.</p>
+
+    <form method="post">
+        <input type="text" name="username" placeholder="Choose a username" required>
+        <input type="password" name="password" placeholder="Choose a password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    <p style="margin-top:15px;">
+        Already registered? <a href="{{ url_for('login') }}">Go to login</a>
+    </p>
+</div>
+
+</body>
+</html>

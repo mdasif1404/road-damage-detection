@@ -1,0 +1,12 @@
+path: Dataset
+
+train: images/train
+val: images/val
+
+nc: 4
+
+names:
+  0: pothole
+  1: crack
+  2: alligator_crack
+  3: patch

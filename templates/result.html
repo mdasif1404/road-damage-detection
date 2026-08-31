@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Road Damage Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="main-container">
+
+    <h1 class="title">Road Damage Analysis Report</h1>
+
+    <div class="image-section">
+
+        <div class="image-card">
+            <h3>Original Image</h3>
+            <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}">
+        </div>
+
+        <div class="image-card">
+            <h3>Detected Damage</h3>
+            <img src="{{ url_for('static', filename='results/' + result_image) }}">
+        </div>
+
+    </div>
+
+    <div class="summary-card">
+
+        <h2>Repair Estimation Summary</h2>
+
+        <div class="summary-grid">
+            <div class="summary-box">
+                <p class="label">Material Required</p>
+                <p class="value">{{ total_mass }} kg</p>
+            </div>
+
+            <div class="summary-box">
+                <p class="label">Estimated Repair Cost</p>
+                <p class="value">₹ {{ total_cost }}</p>
+            </div>
+
+            <div class="summary-box">
+                <p class="label">Road Condition</p>
+
+                {% if overall_severity == "Low" %}
+                    <p class="severity low">Good (Minor Damage)</p>
+                {% elif overall_severity == "Medium" %}
+                    <p class="severity medium">Moderate Damage</p>
+                {% else %}
+                    <p class="severity severe">Severe – Immediate Repair Needed</p>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="button-container">
+        <a href="{{ url_for('index') }}" class="analyze-btn">Analyze Another Image</a>
+    </div>
+
+</div>
+
+</body>
+</html>
