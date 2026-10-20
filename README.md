@@ -240,6 +240,36 @@ The script performs inference on a sample validation image and saves the annotat
 
 
 
+\## Application Screenshots
+
+
+
+\### Dashboard
+
+
+
+!\[Road Damage Detection Dashboard](screenshots/Dashboard.png)
+
+
+
+\### Road Damage Detection Results
+
+
+
+!\[YOLOv8 Road Damage Detection Results](screenshots/result.png)
+
+
+
+\### Damage Analysis Summary
+
+
+
+!\[Road Damage Analysis Summary](screenshots/Analysis.png)
+
+
+
+
+
 \## Author
 
 
