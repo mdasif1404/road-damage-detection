@@ -1,292 +1,280 @@
-# Road Damage Detection Using YOLOv8
+# \# Road Damage Detection Using YOLOv8
 
+# 
 
+# A deep learning-based web application that detects road damage from images using YOLOv8 and Flask. The application displays annotated images and provides an estimated summary of detected road damage.
 
-A deep learning-based web application that detects road damage from images using YOLOv8 and Flask. The application displays annotated images and provides an estimated summary of detected road damage.
+# 
 
+# \## Features
 
+# 
 
-## Features
+# \- Detect road damage using a trained YOLOv8 model.
 
+# \- Identify three damage classes: potholes, cracks, and patches.
 
+# \- Upload road images through a Flask web interface.
 
-- Detect road damage using a trained YOLOv8 model.
+# \- View annotated images with detection results.
 
-- Identify three damage classes: potholes, cracks, and patches.
+# \- Process multiple images using the batch-processing feature.
 
-- Upload road images through a Flask web interface.
+# \- Generate approximate road-damage mass and repair-cost estimates.
 
-- View annotated images with detection results.
+# 
 
-- Process multiple images using the batch-processing feature.
+# \## Technologies Used
 
-- Generate approximate road-damage mass and repair-cost estimates.
+# 
 
+# \- \*\*Programming:\*\* Python, JavaScript, HTML, CSS
 
+# \- \*\*Deep Learning:\*\* YOLOv8, Ultralytics, PyTorch
 
-## Technologies Used
+# \- \*\*Computer Vision:\*\* OpenCV
 
+# \- \*\*Web Framework:\*\* Flask
 
+# \- \*\*Tools:\*\* Git, GitHub, Google Colab
 
-- **Programming:** Python, JavaScript, HTML, CSS
+# 
 
-- **Deep Learning:** YOLOv8, Ultralytics, PyTorch
+# \## Project Structure
 
-- **Computer Vision:** OpenCV
+# 
 
-- **Web Framework:** Flask
+# ```text
 
-- **Tools:** Git, GitHub, Google Colab
+# road-damage-detection/
 
+# ├── models/
 
+# │   └── road\_damage\_best.pt
 
-## Project Structure
+# ├── static/
 
+# │   └── css/
 
+# ├── templates/
 
-```text
+# ├── app.py
 
-road-damage-detection/
+# ├── model.py
 
-├── models/
+# ├── test\_model.py
 
-│   └── road_damage\_best.pt
+# ├── train\_yolo.py
 
-├── static/
+# ├── convert\_xml\_to\_yolo.py
 
-│   └── css/
+# ├── data.yaml
 
-├── templates/
+# ├── requirements.txt
 
-├── app.py
+# ├── .gitignore
 
-├── model.py
+# └── .gitattributes
 
-├── test_model.py
+# ```
 
-├── train_yolo.py
+# 
 
-├── convert_xml_to_yolo.py
+# \## Installation and Setup
 
-├── data.yaml
+# 
 
-├── requirements.txt
+# \### 1. Clone the repository
 
-├── .gitignore
+# 
 
-└── .gitattributes
+# ```bash
 
-```
+# git clone https://github.com/mdasif1404/road-damage-detection.git
 
+# cd road-damage-detection
 
+# ```
 
-## Installation and Setup
+# 
 
+# \### 2. Create and activate a virtual environment
 
+# 
 
-### 1. Clone the repository
+# ```bash
 
+# python -m venv venv
 
+# ```
 
-```bash
+# 
 
-git clone https://github.com/mdasif1404/road-damage-detection.git
+# On Windows PowerShell:
 
-cd road-damage-detection
+# 
 
-```
+# ```powershell
 
+# .\\venv\\Scripts\\Activate.ps1
 
+# ```
 
-### 2. Create and activate a virtual environment
+# 
 
+# \### 3. Install dependencies
 
+# 
 
-```bash
+# ```bash
 
-python -m venv venv
+# pip install -r requirements.txt
 
-```
+# ```
 
+# 
 
+# \### 4. Ensure the trained model is available
 
-Windows:
+# 
 
+# The application requires this model file:
 
+# 
 
-```powershell
+# ```text
 
-.\venv\Scripts\Activate.ps1
+# models/road\_damage\_best.pt
 
-```
+# ```
 
+# 
 
+# The repository uses Git LFS for the model. Install Git LFS and ensure the model file is downloaded correctly when cloning the repository.
 
-### 3. Install dependencies
+# 
 
+# \### 5. Run the application
 
+# 
 
-```bash
+# ```bash
 
-pip install -r requirements.txt
+# python app.py
 
-```
+# ```
 
+# 
 
+# Open the local URL displayed in the terminal, typically `http://127.0.0.1:5000`.
 
-### 4. Download the trained model
+# 
 
+# \## Model Testing
 
+# 
 
-The application requires the trained model at:
+# Run the model test script:
 
+# 
 
+# ```bash
 
-```text
+# python test\_model.py
 
-models/road_damage\_best.pt
+# ```
 
-```
+# 
 
+# The script performs inference on a sample validation image and saves the annotated prediction using Ultralytics.
 
+# 
 
-The repository uses Git LFS for the model file. Ensure Git LFS is installed and the model file has been downloaded correctly.
+# \## Detection Classes
 
+# 
 
+# | Class ID | Class |
 
-### 5. Run the application
+# |---|---|
 
+# | 0 | Pothole |
 
+# | 1 | Crack |
 
-```bash
+# | 2 | Patch |
 
-python app.py
+# 
 
-```
+# \## Important Limitations
 
+# 
 
+# \- Detection performance depends on image quality, lighting, and the training dataset.
 
-Open the local URL displayed in the terminal, typically:
+# \- Mass, severity, and repair-cost figures are estimates based on configured assumptions; they are not calibrated engineering measurements.
 
+# \- Reliable real-world measurements would require suitable scale references, camera calibration, and validation against ground-truth road measurements.
 
+# 
 
-```text
+# \## Future Improvements
 
-http://127.0.0.1:5000
+# 
 
-```
+# \- Evaluate the model on a diverse Indian road-damage dataset.
 
+# \- Improve detection performance across different lighting and road conditions.
 
+# \- Validate damage-size and repair-cost estimation against real measurements.
 
-## Model Testing
+# \- Deploy the application to a cloud platform.
 
+# 
 
+# \## Application Screenshots
 
-Run the model test script:
+# 
 
+# \### Dashboard
 
+# 
 
-```bash
+# !\[Road Damage Detection Dashboard](Screenshots/Dashboard.png)
 
-python test_model.py
+# 
 
-```
+# \### Road Damage Detection Results
 
+# 
 
+# !\[YOLOv8 Detection Results](Screenshots/result.png)
 
-The script performs inference on a sample validation image and saves the annotated prediction using Ultralytics.
+# 
 
+# \### Damage Analysis Summary
 
+# 
 
-## Detection Classes
+# !\[Road Damage Analysis Summary](Screenshots/Analysis.png)
 
+# 
 
+# \## Author
 
-| Class ID | Class   |
+# 
 
-|  --- 	   |  ---    |
+# \*\*Mohammed Asif\*\*
 
-| 0 	   | Pothole |
+# 
 
-| 1 	   | Crack   |
+# GitHub: \[mdasif1404](https://github.com/mdasif1404)
 
-| 2 	   | Patch   |
+# 
 
+# \---
 
+# 
 
-## Important Limitations
-
-
-
-- Detection performance depends on image quality, lighting, and the training dataset.
-
-- Mass, severity, and repair-cost figures are estimates based on configured assumptions; they are not calibrated engineering measurements.
-
-- Reliable real-world measurements would require suitable scale references, camera calibration, and validation against ground-truth road measurements.
-
-
-
-## Future Improvements
-
-
-
-- Evaluate the model on a diverse Indian road-damage dataset.
-
-- Improve detection performance across different lighting and road conditions.
-
-- Validate damage-size and repair-cost estimation against real measurements.
-
-- Deploy the application to a cloud platform.
-
-
-
-## Application Screenshots
-
-
-
-### Dashboard
-
-
-
-!\[Road Damage Detection Dashboard](Screenshots/Dashboard.png)
-
-
-
-### Road Damage Detection Results
-
-
-
-!\[YOLOv8 Detection Results](Screenshots/result.png)
-
-
-
-### Damage Analysis Summary
-
-
-
-!\[Road Damage Analysis Summary](Screenshots/Analysis.png)
-
-
-
-
-
-## Author
-
-
-
-**Mohammed Asif**
-
-
-
-GitHub: https://github.com/mdasif1404
-
-
-
----
-
-
-
-*Developed as a deep learning and computer vision project for road damage detection.*
-
-
+# \*Developed as a deep learning and computer vision project for road damage detection.\*
 
