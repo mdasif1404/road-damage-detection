@@ -1,10 +1,10 @@
 from ultralytics import YOLO
 
-model = YOLO(r"C:\Users\asifm\road_damage_detection\yolov8_weights/road_damage.pt")
+model = YOLO("models/road_damage_best.pt")
 
 results = model(
-    "test_images/road2.webp",
-    conf=0.10,   # lower confidence threshold
+    "val/images/pothole_359.jpg",
+    conf=0.25,
     save=True
 )
 
